@@ -10,9 +10,7 @@ function App() {
     const fetchCharacters = async () => {
       let data = [];
       try {
-        const response = await fetch(
-          'https://your-api-endpoint.com/api/characters'
-        );
+        const response = await fetch('http://localhost:8080/api/characters');
         data = await response.json();
       } catch (error) {
         console.error('Error fetching characters:', error);

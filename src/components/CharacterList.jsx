@@ -2,7 +2,7 @@ import './CharacterList.css';
 
 function CharacterList({ characters }) {
   const handleError = (e) => {
-    e.target.src = '../assets/confused.webp';
+    e.target.src = '/confused.webp';
   };
   return (
     <div className="character-list">

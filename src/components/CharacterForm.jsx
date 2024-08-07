@@ -23,7 +23,14 @@ const AddCharacter = () => {
       bio,
       imageurl: imageUrl,
     };
-    console.log(formData);
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    };
+    await fetch('http://localhost:8080/api/characters', options);
   };
 
   return (

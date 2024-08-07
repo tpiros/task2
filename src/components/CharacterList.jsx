@@ -1,6 +1,9 @@
 import './CharacterList.css';
 
 function CharacterList({ characters }) {
+  const handleError = (e) => {
+    e.target.src = '../assets/confused.webp';
+  };
   return (
     <div className="character-list">
       {characters.map((character, index) => (
@@ -21,6 +24,7 @@ function CharacterList({ characters }) {
             src={character.imageurl}
             alt={character.name}
             className="character-image"
+            onError={handleError}
           />
         </div>
       ))}

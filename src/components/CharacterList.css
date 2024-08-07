@@ -1,0 +1,28 @@
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.character {
+  border: 1px solid #b3cde0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f1f7fc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.character h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #034f84;
+}
+
+.character p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #011f4b;
+}

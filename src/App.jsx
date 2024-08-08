@@ -14,6 +14,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/add" element={<CharacterForm />} />
           <Route path="/list" element={<CharacterList />} />
+          <Route path="/character/:id" element={<CharacterInfo />} />
         </Routes>
 
         {/* <CharacterForm addCharacter={addCharacter} /> */}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './CharacterForm.css';
 
 const AddCharacter = () => {
   const [name, setName] = useState('');
@@ -34,11 +33,19 @@ const AddCharacter = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <h2 className="form-title">Add New Character</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full space-y-6 mx-auto"
+    >
+      <h2 className="text-2xl font-bold text-center text-primary">
+        Add New Character
+      </h2>
 
       <div className="form-group">
-        <label htmlFor="name" className="form-label">
+        <label
+          htmlFor="name"
+          className="form-label block mb-2 text-sm font-medium text-gray-700"
+        >
           Name:
         </label>
         <input
@@ -47,12 +54,15 @@ const AddCharacter = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="form-input"
+          className="input input-bordered w-full"
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="house" className="form-label">
+        <label
+          htmlFor="house"
+          className="form-label block mb-2 text-sm font-medium text-gray-700"
+        >
           House:
         </label>
         <select
@@ -60,7 +70,7 @@ const AddCharacter = () => {
           value={house}
           onChange={(e) => setHouse(e.target.value)}
           required
-          className="form-input"
+          className="select select-bordered w-full"
         >
           <option value="">Select a house</option>
           <option value="Gryffindor">Gryffindor</option>
@@ -71,10 +81,15 @@ const AddCharacter = () => {
       </div>
 
       <div className="form-group">
-        <h3 className="form-subtitle">Wand:</h3>
-        <div className="form-wand-group">
+        <h3 className="form-subtitle text-lg font-medium text-gray-700">
+          Wand:
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="form-wand-item">
-            <label htmlFor="wood" className="form-label">
+            <label
+              htmlFor="wood"
+              className="form-label block mb-2 text-sm font-medium text-gray-700"
+            >
               Wood:
             </label>
             <input
@@ -83,11 +98,14 @@ const AddCharacter = () => {
               value={wandWood}
               onChange={(e) => setWandWood(e.target.value)}
               required
-              className="form-input"
+              className="input input-bordered w-full"
             />
           </div>
           <div className="form-wand-item">
-            <label htmlFor="core" className="form-label">
+            <label
+              htmlFor="core"
+              className="form-label block mb-2 text-sm font-medium text-gray-700"
+            >
               Core:
             </label>
             <input
@@ -96,11 +114,14 @@ const AddCharacter = () => {
               value={wandCore}
               onChange={(e) => setWandCore(e.target.value)}
               required
-              className="form-input"
+              className="input input-bordered w-full"
             />
           </div>
           <div className="form-wand-item">
-            <label htmlFor="length" className="form-label">
+            <label
+              htmlFor="length"
+              className="form-label block mb-2 text-sm font-medium text-gray-700"
+            >
               Length:
             </label>
             <input
@@ -109,14 +130,17 @@ const AddCharacter = () => {
               value={wandLength}
               onChange={(e) => setWandLength(e.target.value)}
               required
-              className="form-input"
+              className="input input-bordered w-full"
             />
           </div>
         </div>
       </div>
 
       <div className="form-group">
-        <label htmlFor="bio" className="form-label">
+        <label
+          htmlFor="bio"
+          className="form-label block mb-2 text-sm font-medium text-gray-700"
+        >
           Bio:
         </label>
         <textarea
@@ -125,12 +149,15 @@ const AddCharacter = () => {
           onChange={(e) => setBio(e.target.value)}
           required
           rows="4"
-          className="form-textarea"
+          className="textarea textarea-bordered w-full"
         ></textarea>
       </div>
 
       <div className="form-group">
-        <label htmlFor="imageurl" className="form-label">
+        <label
+          htmlFor="imageurl"
+          className="form-label block mb-2 text-sm font-medium text-gray-700"
+        >
           Image URL:
         </label>
         <input
@@ -139,11 +166,11 @@ const AddCharacter = () => {
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
           required
-          className="form-input"
+          className="input input-bordered w-full"
         />
       </div>
 
-      <button type="submit" className="form-button">
+      <button type="submit" className="btn btn-primary w-full">
         Add Character
       </button>
     </form>

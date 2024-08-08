@@ -1,37 +1,26 @@
-import { useState, useEffect } from 'react';
 import CharacterForm from './components/CharacterForm';
 import CharacterList from './components/CharacterList';
-import './App.css';
+import Navbar from './components/ui/Navbar';
+import Hero from './components/ui/Hero';
+import Footer from './components/ui/Footer';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    const fetchCharacters = async () => {
-      let data = [];
-      try {
-        const response = await fetch('http://localhost:8080/api/characters');
-        data = await response.json();
-      } catch (error) {
-        console.error('Error fetching characters:', error);
-      } finally {
-        setCharacters(data);
-      }
-    };
-
-    fetchCharacters();
-  }, []);
-
-  const addCharacter = (character) => {
-    setCharacters([...characters, character]);
-  };
-
   return (
-    <div className="App">
-      <h1>Harry Potter Characters</h1>
-      <CharacterForm addCharacter={addCharacter} />
-      <CharacterList characters={characters} />
-    </div>
+    <>
+      <Navbar />
+      <section className="bg-white py-12 w-full flex items-center justify-center">
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/add" element={<CharacterForm />} />
+          <Route path="/list" element={<CharacterList />} />
+        </Routes>
+
+        {/* <CharacterForm addCharacter={addCharacter} /> */}
+        {/* <CharacterList characters={characters} /> */}
+      </section>
+      <Footer />
+    </>
   );
 }
 
